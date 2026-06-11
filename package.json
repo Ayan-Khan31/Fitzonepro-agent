@@ -1,0 +1,37 @@
+{
+  "name": "fitzoneprо-whatsapp-agent",
+  "version": "1.0.0",
+  "description": "WhatsApp AI agent for FitZone Pro gym ",
+  "main": "src/index.js",
+  "scripts": {
+    "start"    : "node src/index.js",
+    "dev"      : "nodemon src/index.js",
+    "test"     : "node test.js",
+    "test:rag" : "node test.js --rag-only",
+    "tunnel"   : "npx --yes localtunnel --port 3000",
+    "dev:full" : "concurrently \"npm run dev\" \"npm run tunnel\""
+  },
+  "keywords": [
+    "whatsapp",
+    "chatbot",
+    "rag",
+    "gemini",
+    "gym"
+  ],
+  "author": "Ayan",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.102.0",
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

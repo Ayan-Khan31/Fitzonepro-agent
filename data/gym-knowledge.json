@@ -1,0 +1,500 @@
+{
+  "gym": {
+    "name": "FitZone Pro",
+    "tagline": "Transform Your Body. Elevate Your Life.",
+    "established": 2018,
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "country": "India"
+  },
+
+  "location": {
+    "address": "Plot No. 47, Near World Trade Park, Malviya Nagar",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "pincode": "302017",
+    "landmark": "Opposite D-Mart, Malviya Nagar",
+    "google_maps": "https://maps.google.com/?q=FitZone+Pro+Malviya+Nagar+Jaipur",
+    "area": "Malviya Nagar",
+    "parking": "Free parking available for 2-wheelers and 4-wheelers in basement"
+  },
+
+  "contact": {
+    "phone_primary": "+91-98290-45678",
+    "phone_secondary": "+91-98291-56789",
+    "whatsapp": "+91-98290-45678",
+    "email": "info@fitzoneprjaipur.in",
+    "website": "www.fitzoneprjaipur.in",
+    "instagram": "@fitzoneprjaipur",
+    "facebook": "FitZoneProJaipur"
+  },
+
+  "timings": {
+    "weekdays": {
+      "days": "Monday to Saturday",
+      "morning_batch": {
+        "label": "Morning Batch",
+        "open": "05:30 AM",
+        "close": "11:00 AM",
+        "peak_hours": "06:00 AM - 09:00 AM",
+        "notes": "Best time for cardio and weight training. AC fully operational from 6 AM."
+      },
+      "evening_batch": {
+        "label": "Evening Batch",
+        "open": "04:00 PM",
+        "close": "10:30 PM",
+        "peak_hours": "06:00 PM - 09:00 PM",
+        "notes": "Busiest time. Personal training sessions available. Zumba and group classes held."
+      }
+    },
+    "sunday": {
+      "days": "Sunday",
+      "morning_batch": {
+        "label": "Morning Only",
+        "open": "06:00 AM",
+        "close": "12:00 PM",
+        "notes": "Sundays are morning-only. Evening batch closed on Sunday."
+      },
+      "evening_batch": null
+    },
+    "public_holidays": "Closed on national holidays (Republic Day, Independence Day, Diwali, Holi). Schedule updates posted on WhatsApp."
+  },
+
+  "membership_plans": [
+    {
+      "id": "monthly",
+      "name": "Monthly Plan",
+      "duration_days": 30,
+      "price_inr": 1200,
+      "registration_fee_inr": 500,
+      "features": [
+        "Unlimited gym access during batch timings",
+        "Access to all cardio machines",
+        "Access to free weights and machines",
+        "1 free body measurement session",
+        "Locker access (shared)"
+      ],
+      "ideal_for": "Those who want to try before committing long-term",
+      "renewable": true
+    },
+    {
+      "id": "quarterly",
+      "name": "Quarterly Plan",
+      "duration_days": 90,
+      "price_inr": 3000,
+      "registration_fee_inr": 500,
+      "savings_vs_monthly": "Save ₹600 compared to 3 monthly plans",
+      "features": [
+        "Unlimited gym access during batch timings",
+        "Access to all cardio machines",
+        "Access to free weights and machines",
+        "2 free body measurement sessions",
+        "Locker access (shared)",
+        "1 free diet consultation with in-house nutritionist",
+        "Access to group fitness classes (Zumba, Yoga)"
+      ],
+      "ideal_for": "Members committed to a fitness journey for 3 months",
+      "renewable": true
+    },
+    {
+      "id": "annual",
+      "name": "Annual Plan",
+      "duration_days": 365,
+      "price_inr": 9000,
+      "registration_fee_inr": 0,
+      "savings_vs_monthly": "Save ₹5,400 compared to 12 monthly plans",
+      "features": [
+        "Unlimited gym access during all batch timings",
+        "Access to all cardio machines",
+        "Access to free weights and machines",
+        "Monthly body measurement sessions (12 total)",
+        "Dedicated locker (personal lock provided)",
+        "Quarterly diet consultations (4 sessions)",
+        "Access to all group fitness classes",
+        "2 free personal training sessions per month",
+        "Priority access during peak hours",
+        "Complimentary gym bag and water bottle",
+        "Free guest passes (2 per month)"
+      ],
+      "ideal_for": "Serious fitness enthusiasts wanting maximum value and perks",
+      "renewable": true,
+      "note": "Registration fee waived for annual plan members"
+    },
+    {
+      "id": "student",
+      "name": "Student Plan",
+      "duration_days": 90,
+      "price_inr": 2200,
+      "registration_fee_inr": 300,
+      "eligibility": "Valid college/university ID required",
+      "features": [
+        "Unlimited gym access (morning batch only for weekdays)",
+        "Full access on weekends",
+        "Access to cardio and weight training equipment",
+        "1 diet consultation session",
+        "Shared locker"
+      ],
+      "ideal_for": "College students and university-goers in Jaipur",
+      "renewable": true
+    },
+    {
+      "id": "couples",
+      "name": "Couples Plan",
+      "duration_days": 90,
+      "price_inr": 5000,
+      "price_per_person_inr": 2500,
+      "registration_fee_inr": 500,
+      "features": [
+        "Unlimited gym access for 2 people",
+        "All quarterly plan benefits for both members",
+        "Joint diet consultation session",
+        "2 free personal training sessions (shared)"
+      ],
+      "ideal_for": "Partners or friends who want to train together",
+      "renewable": true
+    },
+    {
+      "id": "personal_training_addon",
+      "name": "Personal Training Add-On",
+      "duration_days": 30,
+      "price_inr": 2500,
+      "price_note": "Per month, on top of any existing membership",
+      "sessions": 12,
+      "sessions_per_week": 3,
+      "features": [
+        "12 one-on-one sessions per month (3 per week)",
+        "Customized workout plan",
+        "Weekly progress tracking",
+        "Nutritional guidance from trainer",
+        "Dedicated time slot booking"
+      ],
+      "trainers_available": ["Vikram Singh", "Priya Sharma", "Rohit Meena"]
+    }
+  ],
+
+  "trainers": [
+    {
+      "id": "t01",
+      "name": "Vikram Singh",
+      "role": "Head Trainer & Strength Coach",
+      "experience_years": 9,
+      "certifications": [
+        "ISSA Certified Personal Trainer",
+        "Strength & Conditioning Specialist (CSCS)",
+        "CPR & First Aid Certified"
+      ],
+      "specializations": [
+        "Strength training",
+        "Powerlifting",
+        "Body composition transformation",
+        "Beginner onboarding"
+      ],
+      "available_batches": ["morning", "evening"],
+      "languages": ["Hindi", "English"],
+      "about": "Vikram has helped over 200 members achieve their fitness goals. National-level powerlifter with 3 state championship medals. Known for his motivating style and scientific approach to training."
+    },
+    {
+      "id": "t02",
+      "name": "Priya Sharma",
+      "role": "Women's Fitness Specialist & Yoga Instructor",
+      "experience_years": 6,
+      "certifications": [
+        "ACE Certified Personal Trainer",
+        "Yoga Alliance RYT-200",
+        "Prenatal & Postnatal Fitness Certified"
+      ],
+      "specializations": [
+        "Women's fitness",
+        "Yoga and flexibility",
+        "Postpartum recovery",
+        "Weight loss for women",
+        "PCOS-friendly workouts"
+      ],
+      "available_batches": ["morning", "evening"],
+      "languages": ["Hindi", "English", "Rajasthani"],
+      "about": "Priya is the go-to trainer for women at FitZone Pro. Specializes in making women feel safe and empowered in their fitness journeys. Conducts morning Yoga sessions every Tuesday and Thursday."
+    },
+    {
+      "id": "t03",
+      "name": "Rohit Meena",
+      "role": "Cardio & Sports Performance Coach",
+      "experience_years": 5,
+      "certifications": [
+        "NASM Certified Personal Trainer",
+        "Functional Movement Screen (FMS) Certified",
+        "Zumba Licensed Instructor"
+      ],
+      "specializations": [
+        "Cardio and endurance training",
+        "Sports performance",
+        "HIIT workouts",
+        "Zumba classes",
+        "Fat loss programs"
+      ],
+      "available_batches": ["evening"],
+      "languages": ["Hindi", "English"],
+      "about": "Former state-level 400m athlete, Rohit brings an athlete's mindset to everyday fitness. He runs the popular evening Zumba session on Mondays, Wednesdays, and Fridays."
+    },
+    {
+      "id": "t04",
+      "name": "Anjali Rathore",
+      "role": "Nutritionist & Wellness Coach",
+      "experience_years": 4,
+      "certifications": [
+        "B.Sc. in Nutrition & Dietetics (University of Rajasthan)",
+        "Certified Sports Nutritionist (INFS)",
+        "Lifestyle Disease Management Certificate"
+      ],
+      "specializations": [
+        "Diet planning for weight loss",
+        "Muscle gain nutrition",
+        "Vegetarian and vegan diet plans",
+        "Managing diabetes, thyroid, and PCOS through diet",
+        "Supplement guidance"
+      ],
+      "available_batches": ["morning", "evening"],
+      "languages": ["Hindi", "English"],
+      "about": "Anjali provides personalized nutrition plans to all annual members. She believes food is medicine and creates plans that respect Indian dietary preferences and budgets."
+    },
+    {
+      "id": "t05",
+      "name": "Suresh Yadav",
+      "role": "Senior Fitness Trainer",
+      "experience_years": 7,
+      "certifications": [
+        "REPs India Level 3 Certified",
+        "Diploma in Sports Science",
+        "Kettlebell Athletics Certified"
+      ],
+      "specializations": [
+        "Bodybuilding",
+        "Muscle hypertrophy",
+        "Functional fitness",
+        "Kettlebell training",
+        "Senior citizen fitness"
+      ],
+      "available_batches": ["morning"],
+      "languages": ["Hindi"],
+      "about": "Suresh is a morning batch specialist known for his discipline and deep knowledge of progressive overload. Works especially well with senior members and those recovering from injuries."
+    }
+  ],
+
+  "group_classes": [
+    {
+      "name": "Zumba",
+      "instructor": "Rohit Meena",
+      "days": ["Monday", "Wednesday", "Friday"],
+      "time": "07:00 PM - 08:00 PM",
+      "batch": "evening",
+      "capacity": 20,
+      "included_in_plans": ["quarterly", "annual", "couples"]
+    },
+    {
+      "name": "Morning Yoga",
+      "instructor": "Priya Sharma",
+      "days": ["Tuesday", "Thursday"],
+      "time": "06:30 AM - 07:30 AM",
+      "batch": "morning",
+      "capacity": 15,
+      "included_in_plans": ["quarterly", "annual", "couples"]
+    },
+    {
+      "name": "HIIT Bootcamp",
+      "instructor": "Rohit Meena",
+      "days": ["Saturday"],
+      "time": "08:00 AM - 09:00 AM",
+      "batch": "morning",
+      "capacity": 18,
+      "included_in_plans": ["quarterly", "annual", "couples"]
+    },
+    {
+      "name": "Core & Abs Blast",
+      "instructor": "Vikram Singh",
+      "days": ["Tuesday", "Thursday", "Saturday"],
+      "time": "06:00 PM - 06:30 PM",
+      "batch": "evening",
+      "capacity": 20,
+      "included_in_plans": ["quarterly", "annual", "couples"]
+    }
+  ],
+
+  "facilities": {
+    "total_area_sqft": 6000,
+    "floors": 2,
+    "equipment": [
+      "Treadmills (8 units)",
+      "Elliptical cross-trainers (4 units)",
+      "Stationary bikes (5 units)",
+      "Rowing machines (2 units)",
+      "Cable machines (3 units)",
+      "Smith machine",
+      "Squat rack (2 units)",
+      "Leg press machine",
+      "Chest press machine",
+      "Lat pulldown",
+      "Pec deck / butterfly machine",
+      "Dumbbell rack (2 kg to 50 kg)",
+      "Barbell sets with Olympic plates",
+      "Kettlebell set (8 kg to 32 kg)",
+      "Pull-up and dip station",
+      "TRX suspension trainers",
+      "Medicine balls and battle ropes"
+    ],
+    "amenities": [
+      "Fully air-conditioned gym floor",
+      "Separate men's and women's changing rooms",
+      "Hot and cold shower facilities",
+      "Drinking water (RO purified)",
+      "Protein shake bar (in-house supplements available)",
+      "Free Wi-Fi",
+      "HD TV screens with fitness content",
+      "Bluetooth speaker system",
+      "Dedicated stretching zone",
+      "Yoga room (for group classes)",
+      "Personal locker storage",
+      "Sanitization stations at all entry points",
+      "CCTV surveillance for safety"
+    ]
+  },
+
+  "faqs": [
+    {
+      "id": "faq_01",
+      "question": "What are the gym timings?",
+      "answer": "FitZone Pro is open Monday to Saturday with two batches: Morning Batch from 5:30 AM to 11:00 AM and Evening Batch from 4:00 PM to 10:30 PM. On Sundays, we are open only in the morning from 6:00 AM to 12:00 PM. We are closed on major national holidays."
+    },
+    {
+      "id": "faq_02",
+      "question": "How much does a gym membership cost?",
+      "answer": "Our membership plans start at ₹1,200 per month. We offer: Monthly Plan at ₹1,200 (+ ₹500 registration), Quarterly Plan at ₹3,000 (+ ₹500 registration), and Annual Plan at ₹9,000 (registration fee waived). We also have a Student Plan at ₹2,200 for 3 months and a Couples Plan at ₹5,000 for 3 months. All prices are in INR."
+    },
+    {
+      "id": "faq_03",
+      "question": "Is there a registration or joining fee?",
+      "answer": "Yes, there is a one-time registration fee of ₹500 for monthly, quarterly, student, and couples plans. This fee is waived for annual plan members. The registration fee covers your locker assignment and initial body assessment session."
+    },
+    {
+      "id": "faq_04",
+      "question": "Do you offer personal training?",
+      "answer": "Yes! We offer a Personal Training Add-On for ₹2,500 per month (12 sessions, 3 sessions/week). Our certified personal trainers include Vikram Singh (strength specialist), Priya Sharma (women's fitness and yoga), and Rohit Meena (cardio and HIIT). Annual plan members also get 2 free PT sessions per month."
+    },
+    {
+      "id": "faq_05",
+      "question": "What group fitness classes are available?",
+      "answer": "We offer four group classes: Zumba (Mon/Wed/Fri evenings with Rohit Meena), Morning Yoga (Tue/Thu mornings with Priya Sharma), HIIT Bootcamp (Saturday mornings with Rohit Meena), and Core & Abs Blast (Tue/Thu/Sat evenings with Vikram Singh). Group classes are included in Quarterly, Annual, and Couples plans."
+    },
+    {
+      "id": "faq_06",
+      "question": "Where is FitZone Pro located?",
+      "answer": "We are located at Plot No. 47, Near World Trade Park, Malviya Nagar, Jaipur – 302017. Our landmark is Opposite D-Mart, Malviya Nagar. Free parking is available in the basement for both 2-wheelers and 4-wheelers."
+    },
+    {
+      "id": "faq_07",
+      "question": "How do I contact the gym?",
+      "answer": "You can reach us at +91-98290-45678 (call or WhatsApp) or +91-98291-56789. Our email is info@fitzoneprjaipur.in. You can also find us on Instagram as @fitzoneprjaipur."
+    },
+    {
+      "id": "faq_08",
+      "question": "Do you have separate timings or sections for women?",
+      "answer": "Yes, we have a dedicated women's zone on the second floor with full privacy. Women-specific group classes like Yoga and Zumba are conducted by our certified female trainer Priya Sharma. The gym also has separate changing rooms and showers for women."
+    },
+    {
+      "id": "faq_09",
+      "question": "Is diet consultation included in the membership?",
+      "answer": "Diet consultation with our in-house nutritionist Anjali Rathore is included in Quarterly (1 session), Annual (4 sessions), and Couples plans. Monthly and Student plan members can book individual diet consultations at ₹300 per session."
+    },
+    {
+      "id": "faq_10",
+      "question": "Can I freeze or pause my membership?",
+      "answer": "Yes, members can freeze their membership once per membership cycle for up to 15 days. This is useful for travel or medical reasons. You need to notify us at least 48 hours in advance via WhatsApp or in person. Freezing extends your membership end date accordingly."
+    },
+    {
+      "id": "faq_11",
+      "question": "Do you have a trial or free pass option?",
+      "answer": "Yes, we offer a 1-day free trial pass. Just visit us in person with a valid ID and mention you saw us online. Annual members also get 2 guest passes per month to bring friends for a free day visit."
+    },
+    {
+      "id": "faq_12",
+      "question": "What equipment is available at the gym?",
+      "answer": "FitZone Pro is a fully equipped 6,000 sq. ft. facility with 8 treadmills, 4 ellipticals, 5 stationary bikes, 2 rowing machines, a full free-weights section (dumbbells up to 50kg), Smith machine, 2 squat racks, cable machines, kettlebells, TRX suspension trainers, battle ropes, and much more. We also have a dedicated stretching zone and yoga room."
+    },
+    {
+      "id": "faq_13",
+      "question": "Is the gym air-conditioned?",
+      "answer": "Yes, FitZone Pro is fully air-conditioned. The AC is operational from 6:00 AM in the morning batch and throughout the evening batch. This is especially important given Jaipur's summers, where temperatures can exceed 40°C."
+    },
+    {
+      "id": "faq_14",
+      "question": "Do you sell supplements or protein shakes?",
+      "answer": "Yes, we have an in-house protein shake bar where you can get post-workout protein shakes, pre-workouts, and BCAAs. We also stock popular supplement brands at competitive prices. Our nutritionist Anjali Rathore can guide you on which supplements are right for your goals."
+    },
+    {
+      "id": "faq_15",
+      "question": "Is it safe for senior citizens or beginners?",
+      "answer": "Absolutely! FitZone Pro welcomes members of all fitness levels. Our trainer Suresh Yadav specializes in beginner onboarding and senior citizen fitness. We do a complete body assessment before designing any workout plan for new members. The gym is equipped with safety features including padded flooring and CCTV surveillance."
+    },
+    {
+      "id": "faq_16",
+      "question": "What is your refund policy?",
+      "answer": "We do not offer refunds once a membership is activated. However, if you are medically unable to continue (doctor's certificate required), we will freeze your membership for the remaining period. In exceptional cases, membership transfer to a family member is possible upon request."
+    },
+    {
+      "id": "faq_17",
+      "question": "Do you offer online payments?",
+      "answer": "Yes, we accept payments via UPI (Google Pay, PhonePe, Paytm), credit/debit cards, net banking, and cash. Membership fees can also be paid via our WhatsApp or you can walk in. We provide a digital receipt for all transactions."
+    },
+    {
+      "id": "faq_18",
+      "question": "Can I switch between batches?",
+      "answer": "Yes, members can attend either the morning or evening batch on any day — your membership gives you access to both batches. There is no restriction on which batch you attend. Just make sure to arrive within the batch timings."
+    },
+    {
+      "id": "faq_19",
+      "question": "What should I bring on my first day?",
+      "answer": "On your first visit, bring a valid government-issued photo ID (Aadhaar, PAN, or college ID for students), comfortable workout clothes, sports shoes, a water bottle, and a small towel. We provide lockers for your belongings. Your assigned trainer will do an initial assessment and orientation on Day 1."
+    },
+    {
+      "id": "faq_20",
+      "question": "How many trainers do you have?",
+      "answer": "FitZone Pro has 5 certified trainers: Vikram Singh (Head Trainer, Strength & Powerlifting), Priya Sharma (Women's Fitness & Yoga), Rohit Meena (Cardio, HIIT & Zumba), Anjali Rathore (Nutritionist & Wellness Coach), and Suresh Yadav (Senior Trainer, Bodybuilding). All trainers hold nationally and internationally recognized certifications."
+    }
+  ],
+
+  "policies": {
+    "dress_code": "Proper athletic wear and sports shoes are mandatory on the gym floor. No open-toed shoes or slippers allowed.",
+    "hygiene": "Members must wipe down equipment after use. Sanitization stations are available throughout the gym.",
+    "phone_usage": "Phone calls should be taken outside the gym floor. Photography is not permitted without staff permission.",
+    "food": "Only water and gym-approved protein shakes are allowed inside the training area. No outside food on the gym floor.",
+    "age_restriction": "Minimum age for membership is 16 years. Members aged 16-18 require a signed parental consent form.",
+    "guest_policy": "Guests can visit with a paid day pass (₹200) or using a guest pass provided to annual members (2 per month). Guests must be accompanied by the member at all times."
+  },
+
+  "promotions": [
+    {
+      "name": "Summer Fitness Challenge 2026",
+      "valid_until": "2026-07-31",
+      "offer": "20% off on Annual Plans during June-July. Use code FITZONE20 at the reception.",
+      "details": "Special offer for new members joining in June or July 2026."
+    },
+    {
+      "name": "Refer a Friend",
+      "offer": "Refer a friend and both of you get 1 month free added to your plan.",
+      "applicable_plans": ["quarterly", "annual"],
+      "ongoing": true
+    },
+    {
+      "name": "Corporate Membership",
+      "offer": "Special discounted rates for organizations with 10+ employees. Contact us on +91-98290-45678 for corporate quotes.",
+      "ongoing": true
+    }
+  ],
+
+  "metadata": {
+    "document_version": "1.0",
+    "last_updated": "2026-06-08",
+    "maintained_by": "FitZone Pro Management",
+    "purpose": "RAG knowledge base for FitZone Pro AI assistant",
+    "language": "English",
+    "currency": "INR (Indian Rupee)"
+  }
+}
