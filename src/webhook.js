@@ -1,19 +1,19 @@
 "use strict";
 
 const express = require("express");
-const axios   = require("axios");
-const { retrieveChunks }   = require("./rag");
-const { generateReply }    = require("./claude");
-const { processLeadFlow }  = require("./leads");
-const logger               = require("./logger");
+const axios = require("axios");
+const { retrieveChunks } = require("./rag");
+const { generateReply } = require("./claude");
+const { processLeadFlow } = require("./leads");
+const logger = require("./logger");
 
 const router = express.Router();
 
-const VERIFY_TOKEN      = process.env.VERIFY_TOKEN;
-const WHATSAPP_TOKEN    = process.env.WHATSAPP_TOKEN;
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
 const WHATSAPP_PHONE_ID = process.env.WHATSAPP_PHONE_ID;
 const GRAPH_API_VERSION = "v19.0";
-const GRAPH_API_URL     = `https://graph.facebook.com/${GRAPH_API_VERSION}/${WHATSAPP_PHONE_ID}/messages`;
+const GRAPH_API_URL = `https://graph.facebook.com/${GRAPH_API_VERSION}/${WHATSAPP_PHONE_ID}/messages`;
 
 if (!VERIFY_TOKEN || !WHATSAPP_TOKEN || !WHATSAPP_PHONE_ID) {
   logger.warn(
@@ -24,8 +24,8 @@ if (!VERIFY_TOKEN || !WHATSAPP_TOKEN || !WHATSAPP_PHONE_ID) {
 }
 
 router.get("/", (req, res) => {
-  const mode      = req.query["hub.mode"];
-  const token     = req.query["hub.verify_token"];
+  const mode = req.query["hub.mode"];
+  const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
 
   logger.info(`[Webhook] GET verification request — mode: ${mode}`);
@@ -50,9 +50,9 @@ router.post("/", async (req, res) => {
       return;
     }
 
-    const entry   = body.entry?.[0];
+    const entry = body.entry?.[0];
     const changes = entry?.changes?.[0];
-    const value   = changes?.value;
+    const value = changes?.value;
 
     if (!value?.messages || value.messages.length === 0) {
       logger.debug("[Webhook] No messages in payload — likely a status update, skipping");
@@ -62,9 +62,10 @@ router.post("/", async (req, res) => {
     const message = value.messages[0];
 
     const senderPhone = message.from;
-    const messageId   = message.id;
+    logger.info(`[DEBUG] Sender phone extracted: ${senderPhone}`);
+    const messageId = message.id;
     const messageType = message.type;
-    const timestamp   = new Date(Number(message.timestamp) * 1000).toISOString();
+    const timestamp = new Date(Number(message.timestamp) * 1000).toISOString();
     const profileName = value.contacts?.[0]?.profile?.name ?? "Unknown";
 
     logger.info(
