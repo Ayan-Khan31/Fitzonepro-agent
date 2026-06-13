@@ -5,6 +5,7 @@ const axios = require("axios");
 const { retrieveChunks } = require("./rag");
 const { generateReply } = require("./claude");
 const { processLeadFlow } = require("./leads");
+const { detectTrainerQuery, sendTrainerList, sendTrainerProfile } = require("./trainers");
 const logger = require("./logger");
 
 const router = express.Router();
@@ -73,6 +74,31 @@ router.post("/", async (req, res) => {
       `| type: ${messageType} | id: ${messageId} | ts: ${timestamp}`
     );
 
+    if (messageType === "interactive") {
+      const interactiveType = message.interactive?.type;
+      logger.info(`[Webhook] 🔘 Interactive reply received — sub-type: ${interactiveType} from ${senderPhone}`);
+
+      if (interactiveType === "list_reply") {
+        const selectedId = message.interactive.list_reply?.id;
+        const selectedTitle = message.interactive.list_reply?.title;
+        logger.info(`[Webhook] 📌 Trainer selected: id=${selectedId} title="${selectedTitle}"`);
+
+        await markMessageRead(messageId).catch((err) =>
+          logger.warn(`[Webhook] Could not mark message as read: ${err.message}`)
+        );
+
+        await sendTrainerProfile(senderPhone, selectedId);
+        logger.info(`[Webhook] 📤 Trainer profile dispatched to ${senderPhone}`);
+      } else {
+        logger.info(`[Webhook] Unhandled interactive sub-type "${interactiveType}" — sending fallback`);
+        await sendWhatsAppMessage(
+          senderPhone,
+          "Sorry, I can only handle text messages right now. Please type your question! 😊"
+        );
+      }
+      return;
+    }
+
     if (messageType !== "text") {
       logger.info(`[Webhook] Non-text message type "${messageType}" — sending fallback`);
       await sendWhatsAppMessage(
@@ -101,6 +127,13 @@ router.post("/", async (req, res) => {
       logger.info(`[Webhook] 🎯 Lead flow intercepted — sending lead reply to ${senderPhone}`);
       await sendWhatsAppMessage(senderPhone, lead.reply);
       logger.info(`[Webhook] 📤 Lead reply sent to ${senderPhone}`);
+      return;
+    }
+
+    if (detectTrainerQuery(userText)) {
+      logger.info(`[Webhook] 🏋️ Trainer query detected for ${senderPhone} — sending interactive list`);
+      await sendTrainerList(senderPhone);
+      logger.info(`[Webhook] 📤 Trainer list sent to ${senderPhone}`);
       return;
     }
 
