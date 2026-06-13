@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const express = require("express");
 const webhookRouter = require("./webhook");
+const { processFollowUps } = require("./followup");
 const logger  = require("./logger");
 
 const app  = express();
@@ -36,6 +37,7 @@ app.listen(PORT, () => {
   logger.info(`🚀 FitZone Pro WhatsApp Agent running on port ${PORT}`);
   logger.info(`   Webhook URL: http://localhost:${PORT}/webhook`);
   logger.info(`   Health:      http://localhost:${PORT}/health`);
+  processFollowUps();
 });
 
 module.exports = app;

@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const logger = require("./logger");
+const { scheduleFollowUp } = require("./followup");
 
 const LEADS_PATH = path.resolve(__dirname, "../data/leads.json");
 
@@ -98,12 +99,14 @@ function processLeadFlow(phone, messageText) {
     session.awaitingName = false;
 
     if (!session.leadSaved) {
+      const savedQuery = session.pendingQuery ?? messageText;
       saveLead({
         name,
         phone,
-        query: session.pendingQuery ?? messageText,
+        query: savedQuery,
         timestamp: new Date().toISOString(),
       });
+      scheduleFollowUp(phone, name, savedQuery);
       session.leadSaved = true;
     }
 
@@ -137,6 +140,7 @@ function processLeadFlow(phone, messageText) {
           query: messageText,
           timestamp: new Date().toISOString(),
         });
+        scheduleFollowUp(phone, session.name, messageText);
         session.leadSaved = true;
       }
       logger.debug(`[Leads] Lead saved silently (name already known: "${session.name}")`);
