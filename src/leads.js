@@ -4,6 +4,9 @@ const fs = require("fs");
 const path = require("path");
 const logger = require("./logger");
 const { scheduleFollowUp } = require("./followup");
+const config = require("../config.json");
+
+const GYM_NAME = config.gym.name;
 
 const LEADS_PATH = path.resolve(__dirname, "../data/leads.json");
 
@@ -104,6 +107,7 @@ function processLeadFlow(phone, messageText) {
         name,
         phone,
         query: savedQuery,
+        gym_name: GYM_NAME,
         timestamp: new Date().toISOString(),
       });
       scheduleFollowUp(phone, name, savedQuery);
@@ -138,6 +142,7 @@ function processLeadFlow(phone, messageText) {
           name: session.name,
           phone,
           query: messageText,
+          gym_name: GYM_NAME,
           timestamp: new Date().toISOString(),
         });
         scheduleFollowUp(phone, session.name, messageText);

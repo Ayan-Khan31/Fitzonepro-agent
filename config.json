@@ -1,0 +1,30 @@
+{
+  "gym": {
+    "name": "FitZone Pro",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "phone_primary": "+91-98290-45678",
+    "phone_secondary": "+91-98290-45679",
+    "whatsapp": "+91-98290-45678",
+    "address": "C-12, Malviya Nagar, Jaipur",
+    "tagline": "Your Fitness, Our Passion"
+  },
+  "membership": {
+    "monthly": 1500,
+    "quarterly": 4000,
+    "annual": 12000,
+    "student": 2200,
+    "couple": 2500,
+    "currency": "₹"
+  },
+  "bot": {
+    "name": "FitBot",
+    "language": "hinglish",
+    "greeting": "Namaste! 💪 Welcome to {gym_name}. Main aapki kaise help kar sakta hoon?",
+    "fallback_contact": "+91-98290-45678"
+  },
+  "business_hours": {
+    "weekdays": "5:30 AM - 10:00 PM",
+    "sunday": "6:00 AM - 12:00 PM"
+  }
+}

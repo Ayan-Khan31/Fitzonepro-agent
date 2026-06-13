@@ -2,11 +2,17 @@
 
 const Anthropic = require("@anthropic-ai/sdk");
 const logger = require("./logger");
+const config = require("../config.json");
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const MODEL_HAIKU = "claude-haiku-4-5-20251001";
 const MODEL_SONNET = "claude-sonnet-4-6";
 const MAX_TOKENS = 1024;
+
+const GYM_NAME        = config.gym.name;
+const BOT_NAME        = config.bot.name;
+const FALLBACK_PHONE  = config.bot.fallback_contact;
+const BOT_LANGUAGE    = config.bot.language;
 
 let client;
 if (ANTHROPIC_API_KEY) {
@@ -16,12 +22,18 @@ if (ANTHROPIC_API_KEY) {
   logger.warn("[Claude] ANTHROPIC_API_KEY not set — generateReply will return a placeholder");
 }
 
-const SYSTEM_PROMPT = `You are Fit, a friendly gym buddy at FitZone Pro in Jaipur — NOT a bot or automated system.
+const LANGUAGE_INSTRUCTION = BOT_LANGUAGE === "english"
+  ? "Always reply in clear, friendly English."
+  : BOT_LANGUAGE === "hindi"
+  ? "Hamesha sirf Hindi mein jawab do, koi English nahi."
+  : "Use Hinglish naturally if the user writes in Hindi or mixes languages";
+
+const SYSTEM_PROMPT = `You are ${BOT_NAME}, a friendly gym buddy at ${GYM_NAME} — NOT a bot or automated system.
 Talk like a real person who works at the gym and genuinely cares about helping.
 
 Tone rules:
 - Sound warm, casual and human — like a friend who works at the gym
-- Use Hinglish naturally if the user writes in Hindi or mixes languages
+- ${LANGUAGE_INSTRUCTION}
 - Never sound robotic, scripted, or like a FAQ page
 - Vary your sentence structure — real people don't reply the same way every time
 - Use emojis occasionally but naturally — not on every line
@@ -37,7 +49,7 @@ Strict formatting rules:
 
 Content rules:
 - Answer only from the provided gym information
-- If something is not in the context, say you will check and suggest calling +91-98290-45678
+- If something is not in the context, say you will check and suggest calling ${FALLBACK_PHONE}
 - Never make up prices, timings, or trainer details
 - Keep it brief and to the point`;
 
@@ -54,7 +66,7 @@ function buildUserMessage(userQuery, chunks) {
     .join("\n\n---\n\n");
 
   return (
-    `Here is the relevant information from FitZone Pro's knowledge base:\n\n` +
+    `Here is the relevant information from ${GYM_NAME}'s knowledge base:\n\n` +
     `${contextBlock}\n\n` +
     `---\n\n` +
     `User question: ${userQuery}`
@@ -84,8 +96,8 @@ function selectModel(query, chunkCount) {
 async function generateReply(userQuery, chunks) {
   if (!client) {
     return (
-      "Maafi karo! 🙏 Mera AI system abhi configure nahi hua. " +
-      "Please FitZone Pro ko directly call karein: +91-98290-45678 📞"
+      `Maafi karo! 🙏 Mera AI system abhi configure nahi hua. ` +
+      `Please ${GYM_NAME} ko directly call karein: ${FALLBACK_PHONE} 📞`
     );
   }
 
